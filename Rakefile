@@ -15,11 +15,11 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "minidynamo"
-  gem.homepage = "http://github.com/davidpelaez/minidynamo"
+  gem.homepage = "http://github.com/vlipco/minidynamo"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "pelaez89@gmail.com"
+  gem.summary = %Q{AWS SDK HashModel extension to support DynamoDB tables with hash-range keys}
+  gem.description = %Q{Monkey patch for AWS ruby SDK HashModel to support model backed by DynamoDB tables with hash-range keys. It also provides some convenience methods to define your model in a more expressive rails style.}
+  gem.email = "info@vlipco.co"
   gem.authors = ["David Pelaez"]
   # dependencies defined in Gemfile
 end
@@ -32,13 +32,13 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
-end
+#require 'rcov/rcovtask'
+#Rcov::RcovTask.new do |test|
+#  test.libs << 'test'
+#  test.pattern = 'test/**/test_*.rb'
+#  test.verbose = true
+#  test.rcov_opts << '--exclude "gems/*"'
+#end
 
 task :default => :test
 
