@@ -43,10 +43,7 @@ module Minidynamo
 			end
 
 			def rangeless_query(*args)
-				# Map to string if that's the case. For any other type of hash_key
-				# you will have to provide the converted value or errors might appear
-				hash_key_type == :s ? hkv = args[0].to_s : hkv = args[0]
-
+				hkv = args[0]
 				result = dynamo_db.client.query 	:table_name => dynamo_db_table_name, 
 											:consistent_read => true, 
 											:hash_key_value => {hash_key_type => hkv} 

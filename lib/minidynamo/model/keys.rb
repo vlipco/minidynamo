@@ -37,7 +37,7 @@ module Minidynamo
 			end
 			
 			def hash_range_table?
-				! hash_key.nil?
+				! range_key.nil?
 			end
 
 		end
