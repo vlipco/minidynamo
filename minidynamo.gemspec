@@ -9,21 +9,30 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Pelaez"]
-  s.date = "2013-06-11"
+  s.date = "2013-06-14"
   s.description = "Monkey patch for AWS ruby SDK HashModel to support model backed by DynamoDB tables with hash-range keys. It also provides some convenience methods to define your model in a more expressive rails style."
   s.email = "info@vlipco.co"
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc"
+    "README.md"
   ]
   s.files = [
     ".document",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
-    "README.rdoc",
+    "README.md",
     "Rakefile",
     "VERSION",
     "lib/minidynamo.rb",
+    "lib/minidynamo/check_digit.rb",
+    "lib/minidynamo/model.rb",
+    "lib/minidynamo/model/definition_helpers.rb",
+    "lib/minidynamo/model/dynamo_db_overloads.rb",
+    "lib/minidynamo/model/finder_overloads.rb",
+    "lib/minidynamo/model/keys.rb",
+    "minidynamo.gemspec",
+    "model2.rb",
     "test/helper.rb",
     "test/test_minidynamo.rb"
   ]
