@@ -20,8 +20,8 @@ module Minidynamo
 				end
 				type = key[hk]
 				attribute_creator_method_name = "#{type.to_s}_attr".to_sym
-				puts "CREATING HASH KEY ATTR #{attribute_creator_method_name}"
-				send attribute_creator_method_name, hk
+				
+				send attribute_creator_method_name, hk unless attribute_creator_method_name == :find_by_id
 			end
 
 			def hash_key_attribute_name
