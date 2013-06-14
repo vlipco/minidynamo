@@ -27,14 +27,14 @@ module Minidynamo
 				# @api private
 				def dynamo_db_table shard_name = nil
 					table = dynamo_db.tables[dynamo_db_table_name(shard_name)]
-					#table.hash_key = hash_key #[:id, :string]
-					#table.range_key = range_key if range_key
+					table.hash_key = hash_key #[:id, :string]
+					table.range_key = range_key if range_key
 
-					#table.hash_key = {:public_token => :string }#hash_key #[:id, :string]
-					#table.range_key = {:created_at => :string }#hash_key #[:id, :string]
+					#table.hash_key = {:public_token => :string }
+					#table.range_key = {:created_at => :string }
 
-					table.hash_key = [:public_token, :string]
-					table.range_key = [:created_at, :string]
+					#table.hash_key = [:public_token, :string]
+					#table.range_key = [:created_at, :string]
 					table
 				end
 
