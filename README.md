@@ -1,8 +1,10 @@
-= Minidynamo
+Minidynamo
+==============
 
 Monkey patch for AWS ruby SDK HashModel to support model backed by DynamoDB tables with hash-range keys. 
 
-== What's minidynamo for?
+## What's minidynamo for?
+
 
 As of June 2013 AWS-sdk for ruby HasModel for DynamoDB does not support working with tables having a hash-range main key. Additionally the main key in hash tables is alway called :id. 
 
@@ -22,13 +24,13 @@ Minidynamo offers the following compared to HashModel:
 
 This simple additions, even though still not offering the full range of posibilities for hash-range tables in DynamoDB current API, will cover lots of use cases. We currently use it in more than 3 internal applications. Hash-range + DynamoDB in this applications enable low latency data availability to improve response times in internal components and make scaling a matter of clicks.
 
-== Current limitations
+## Current limitations
 
 * There's currently no definition of extra indexes.
 * Besides rangeless_query to find items in hash-range tables by only providing the hash value, there's no other querying functionality.
 * Nothing has been done regarding scoping, scanning or anything related to find more than the rangeless_query method listed below.
 
-== Instructions
+## Instructions
 
 Include minidynamo in your Gemfile. 
 
@@ -38,7 +40,7 @@ gem 'minidynamo', '~> 0.1.0'
 
 Don't forget to do `bundle install` right after.
 
-=== Defining a table
+### Defining a table
 
 ```ruby
 class TestModel < Minidynamo::Model
@@ -70,7 +72,7 @@ You can still work with hash-only tables. Just omit the range_key part in the ca
 
 You could go and create the table by calling `TestModel.create_table`
 
-== Contributing to minidynamo
+## Contributing to minidynamo
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
@@ -80,7 +82,7 @@ You could go and create the table by calling `TestModel.create_table`
 * Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
 * Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
-== Copyright
+## Copyright
 
 Copyright (c) 2013 Vlipco S.A.S. See LICENSE.txt for
 further details.
