@@ -36,12 +36,6 @@ Include minidynamo in your Gemfile.
 gem 'minidynamo', '~> 0.1.0'
 ```
 
-We are working in making some additions, so you might be interested in using:
-
-```ruby
-gem 'minidynamo', '~> 0.1.0', :git => 'git://github.com/Vlipco/minidynamo.git',	:branch => 'edge'
-```
-
 Don't forget to do `bundle install` right after.
 
 === Defining a table
