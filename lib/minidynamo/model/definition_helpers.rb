@@ -5,7 +5,7 @@ module Minidynamo
 			# For all the fields with defaults
 			attr_writer :write_capacity, :read_capacity
 
-			attr_accessor :range_key
+			#attr_accessor :range_key
 
 			def table options = {}
 				set_shard_name options[:name]
@@ -19,7 +19,6 @@ module Minidynamo
 
 			def field key, type, options = {}
 				method_name = "#{type.to_s}_attr".to_sym
-				puts "CALLING #{method_name}"
 				send method_name, key, options
 			end
 

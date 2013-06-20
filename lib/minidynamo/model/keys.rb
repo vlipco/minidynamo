@@ -5,7 +5,7 @@ module Minidynamo
 			# For all the fields with defaults
 			attr_writer :write_capacity, :read_capacity
 
-			attr_accessor :range_key
+			attr_reader :range_key
 
 			def hash_key
 				@hash_key || {:id => :string}
@@ -22,7 +22,17 @@ module Minidynamo
 				end
 				type = key[hk]
 				attribute_creator_method_name = "#{type.to_s}_attr".to_sym
+				puts "hk: CALLING #{attribute_creator_method_name} with #{hk}"
 				send attribute_creator_method_name, hk 
+			end
+
+			def range_key=(key)
+				@range_key = key
+				rk = key.keys[0]
+				type = key[rk]
+				attribute_creator_method_name = "#{type.to_s}_attr".to_sym
+				puts "rk: CALLING #{attribute_creator_method_name} with #{rk}"
+				send attribute_creator_method_name, rk 
 			end
 
 			def hash_key_attribute_name
