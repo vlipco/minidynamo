@@ -14,14 +14,15 @@ module Minidynamo
 			def hash_key=(key)
 				@hash_key = key
 				hk = key.keys[0]
-				finder_method_name = "find_by_#{hk}".to_sym           
-				self.define_singleton_method finder_method_name do |x|
-					find_by_id x
+				finder_method_name = "find_by_#{hk}".to_sym   
+				unless finder_method_name == :find_by_id        
+					self.define_singleton_method finder_method_name do |x|
+						find_by_id x
+					end
 				end
 				type = key[hk]
 				attribute_creator_method_name = "#{type.to_s}_attr".to_sym
-				
-				send attribute_creator_method_name, hk unless attribute_creator_method_name == :find_by_id
+				send attribute_creator_method_name, hk 
 			end
 
 			def hash_key_attribute_name
