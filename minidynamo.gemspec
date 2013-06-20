@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "minidynamo"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Pelaez"]
-  s.date = "2013-06-14"
+  s.date = "2013-06-20"
   s.description = "Monkey patch for AWS ruby SDK HashModel to support model backed by DynamoDB tables with hash-range keys. It also provides some convenience methods to define your model in a more expressive rails style."
   s.email = "info@vlipco.co"
   s.extra_rdoc_files = [
@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
     "lib/minidynamo/model/dynamo_db_overloads.rb",
     "lib/minidynamo/model/finder_overloads.rb",
     "lib/minidynamo/model/keys.rb",
+    "minidynamo-0.1.0.gem",
     "minidynamo.gemspec",
     "model2.rb",
     "test/helper.rb",
@@ -46,18 +47,18 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<aws-sdk>, ["~> 1.11.2"])
+      s.add_runtime_dependency(%q<aws-sdk>, [">= 1.11.3"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
     else
-      s.add_dependency(%q<aws-sdk>, ["~> 1.11.2"])
+      s.add_dependency(%q<aws-sdk>, [">= 1.11.3"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
     end
   else
-    s.add_dependency(%q<aws-sdk>, ["~> 1.11.2"])
+    s.add_dependency(%q<aws-sdk>, [">= 1.11.3"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<rdoc>, ["~> 3.12"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
