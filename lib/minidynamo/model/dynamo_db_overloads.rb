@@ -27,8 +27,8 @@ module Minidynamo
 				# @api private
 				def dynamo_db_table shard_name = nil
 					table = dynamo_db.tables[dynamo_db_table_name(shard_name)]
-					table.hash_key = convert_key_to_dynamo_db_types hash_key #[:id, :string]
-					table.range_key = convert_key_to_dynamo_db_types range_key if range_key
+					table.hash_key = convert_key_to_dynamo_db_types(hash_key) #[:id, :string]
+					table.range_key = convert_key_to_dynamo_db_types(range_key) if range_key
 
 					#table.hash_key = {:public_token => :string }
 					#table.range_key = {:created_at => :string }
@@ -42,7 +42,7 @@ module Minidynamo
 					keyname = key.keys[0]
 					type = key[keyname]
 					equivalent_type = nil
-					case keyname
+					case type
 					when :float
 						equivalent_type = :number
 					when :integer
@@ -56,7 +56,7 @@ module Minidynamo
 					end
 					key = {}
 					key[keyname] = equivalent_type
-
+					return key
 				end
 
 
