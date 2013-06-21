@@ -41,7 +41,7 @@ module Minidynamo
 				def convert_key_to_dynamo_db_types key
 					keyname = key.keys[0]
 					type = key[keyname]
-					equivalent_type
+					equivalent_type = nil
 					case keyname
 					when :float
 						equivalent_type = :number
