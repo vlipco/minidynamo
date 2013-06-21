@@ -16,10 +16,10 @@ module Minidynamo
 					create_opts[:hash_key] = hash_key
 					create_opts[:range_key] = range_key if range_key
 
-					dynamo_db.tables.create   dynamo_db_table_name,
-					read_capacity,
-					write_capacity,
-					create_opts
+					dynamo_db.tables.create   	dynamo_db_table_name,
+												read_capacity,
+												write_capacity,
+												create_opts
 				end
 
 				# @return [DynamoDB::Table]
@@ -27,8 +27,8 @@ module Minidynamo
 				# @api private
 				def dynamo_db_table shard_name = nil
 					table = dynamo_db.tables[dynamo_db_table_name(shard_name)]
-					table.hash_key = hash_key #[:id, :string]
-					table.range_key = range_key if range_key
+					table.hash_key = convert_key_to_dynamo_db_types hash_key #[:id, :string]
+					table.range_key = convert_key_to_dynamo_db_types range_key if range_key
 
 					#table.hash_key = {:public_token => :string }
 					#table.range_key = {:created_at => :string }
@@ -36,6 +36,27 @@ module Minidynamo
 					#table.hash_key = [:public_token, :string]
 					#table.range_key = [:created_at, :string]
 					table
+				end
+
+				def convert_key_to_dynamo_db_types key
+					keyname = key.keys[0]
+					type = key[keyname]
+					equivalent_type
+					case keyname
+					when :float
+						equivalent_type = :number
+					when :integer
+						equivalent_type = :number
+					when :boolean
+						equivalent_type = :number
+					when :binary
+						equivalent_type = :binary
+					else
+						equivalent_type = :string
+					end
+					key = {}
+					key[keyname] = equivalent_type
+
 				end
 
 
