@@ -13,8 +13,8 @@ module Minidynamo
 				# inside the model
 				def create_table
 					create_opts = {}
-					create_opts[:hash_key] = hash_key
-					create_opts[:range_key] = range_key if range_key
+					create_opts[:hash_key] = convert_key_to_dynamo_db_types hash_key
+					create_opts[:range_key] = convert_key_to_dynamo_db_types range_key if range_key
 
 					dynamo_db.tables.create   	dynamo_db_table_name,
 												read_capacity,

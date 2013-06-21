@@ -22,7 +22,7 @@ module Minidynamo
 				end
 				type = key[hk]
 				attribute_creator_method_name = "#{type.to_s}_attr".to_sym
-				puts "hk: CALLING #{attribute_creator_method_name} with #{hk}"
+				#puts "hk: CALLING #{attribute_creator_method_name} with #{hk}"
 				send attribute_creator_method_name, hk 
 			end
 
@@ -31,7 +31,7 @@ module Minidynamo
 				rk = key.keys[0]
 				type = key[rk]
 				attribute_creator_method_name = "#{type.to_s}_attr".to_sym
-				puts "rk: CALLING #{attribute_creator_method_name} with #{rk}"
+				#puts "rk: CALLING #{attribute_creator_method_name} with #{rk}"
 				send attribute_creator_method_name, rk 
 			end
 
