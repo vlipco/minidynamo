@@ -8,7 +8,7 @@ module Minidynamo
 
 				data = table.items[id].attributes.to_h
 
-				raise RecordNotFound, "no data found for id: #{id}" if data.empty?
+				raise AWS::Record::RecordNotFound, "no data found for id: #{id}" if data.empty?
 
 				obj = self.new(:shard => table)
 				obj.send(:hydrate, id, data)
