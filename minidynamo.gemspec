@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "minidynamo"
-  s.version = "0.1.1"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Pelaez"]
@@ -31,7 +31,6 @@ Gem::Specification.new do |s|
     "lib/minidynamo/model/dynamo_db_overloads.rb",
     "lib/minidynamo/model/finder_overloads.rb",
     "lib/minidynamo/model/keys.rb",
-    "minidynamo-0.1.0.gem",
     "minidynamo.gemspec",
     "model2.rb",
     "test/helper.rb",
