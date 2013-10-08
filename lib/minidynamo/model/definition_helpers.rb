@@ -22,7 +22,7 @@ module Minidynamo
 				send method_name, key, options
 			end
 
-			def initial_througput options = {}
+			def initial_throughput options = {}
 				self.read_capacity = options[:read_capacity]
 				self.write_capacity = options[:write_capacity]
 			end
