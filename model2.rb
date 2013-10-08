@@ -69,7 +69,7 @@ module Minidynamo
 	        # TABLE THROUGHPUT HELPERS
 	        #
 
-	        def initial_througput options = {}
+	        def initial_throughput options = {}
 	        	self.read_capacity = options[:read_capacity]
 	        	self.write_capacity = options[:write_capacity]
 	        end

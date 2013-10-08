@@ -49,7 +49,7 @@ class TestModel < Minidynamo::Model
 			hash_key: {:my_attribute => :string},
 			range_key: {:my_range_name => :string}
 
-	initial_througput read_capacity: 5, write_capacity: 5
+	initial_throughput read_capacity: 5, write_capacity: 5
 
 	timestamps
 
