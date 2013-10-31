@@ -35,7 +35,7 @@ This simple additions, even though still not offering the full range of posibili
 Include minidynamo in your Gemfile. 
 
 ```ruby
-gem 'minidynamo', '~> 0.1.0'
+gem 'minidynamo', '~> 0.1.3'
 ```
 
 Don't forget to do `bundle install` right after.
