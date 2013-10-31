@@ -32,7 +32,6 @@ Gem::Specification.new do |s|
     "lib/minidynamo/model/finder_overloads.rb",
     "lib/minidynamo/model/keys.rb",
     "minidynamo.gemspec",
-    "model2.rb",
     "test/helper.rb",
     "test/test_minidynamo.rb"
   ]
