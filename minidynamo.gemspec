@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "minidynamo"
-  s.version = "0.1.2"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Pelaez"]
-  s.date = "2013-06-20"
+  s.date = "2013-10-29"
   s.description = "Monkey patch for AWS ruby SDK HashModel to support model backed by DynamoDB tables with hash-range keys. It also provides some convenience methods to define your model in a more expressive rails style."
   s.email = "info@vlipco.co"
   s.extra_rdoc_files = [
